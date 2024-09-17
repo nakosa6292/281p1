@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build",
+        "type": "shell",
+        "command": "/usr/bin/g++",  // or the correct path to your compiler
+        "args": [
+          "-std=c++11",  // Specify C++11 standard
+          "-g",  // Include debug symbols
+          "${workspaceFolder}/ship.cpp",  // Your main source file
+          "${workspaceFolder}/ship_functions.cpp",  // Include the file with missing method definitions
+          "-o", "${workspaceFolder}/ship"  // Output binary file
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Generated task to build ship.cpp and ship_functions.cpp"
+      }
+    ]
+  }

@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "lldb",  // or "gdb" depending on your debugger
+        "request": "launch",
+        "name": "Debug Ship",
+        "program": "${workspaceFolder}/ship",  // Path to your compiled program
+        "args": [
+          "--queue",  // Example argument; change to --stack if needed
+          "--output", "L"  // Example output mode; use "L" for list format
+        ],
+        "stdio": [
+          "${workspaceFolder}/test-4-ql.txt",  // Input redirection from test1.txt
+          "${workspaceFolder}/test_out.txt",  // Output redirection to test1_out.txt
+          null  // Optional: stderr (leave null or redirect to a file if needed)
+        ],
+        "cwd": "${workspaceFolder}",  // Set the working directory to the workspace folder
+        "preLaunchTask": "build",  // Optional: Specify a pre-launch build task
+        "internalConsoleOptions": "neverOpen",  // Prevent the internal console from opening
+      }
+    ]
+  }
